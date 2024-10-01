@@ -1,0 +1,93 @@
+/* Fuente Lato */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Efecto máquina de escribir */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Variante con línea más gruesa */
+.typewriter.thick {
+    border-right: 4px solid;
+}
+
+/* Variante sin cursor */
+.typewriter.nocaret {
+    border-right: none;
+}
+
+/* Animación de escribir */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+/* ------------------ Estilos para los botones ------------------ */
+
+/* Estilos generales para el botón */
+.btn-3 {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    z-index: 1;
+    border: none;
+    background: none;
+    color: #03cc57; /* Color del texto */
+    padding: 10px 20px; /* Espaciado alrededor del texto */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+}
+
+/* Efecto antes de hacer hover */
+.btn-3::after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 110%;
+    left: -10%;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    background-color: #ffffff;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+/* Borde decorativo antes de hacer hover */
+.btn-3::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: skew(20deg, 0deg);
+    border: 3px solid #03cc57;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+/* Cambios al hacer hover sobre el botón */
+.btn-3:hover::after {
+    background-color: #ffffff31;
+    transform: skew(20deg, 0deg) translateX(240px);
+}
+
+/* Cambios al hacer hover sobre el botón - borde y fondo */
+.btn-3:hover::before {
+    background-color: #03cc57;
+    border: 3px solid #029740;
+    transform: skew(20deg, 0deg) scale(1.1);
+}
